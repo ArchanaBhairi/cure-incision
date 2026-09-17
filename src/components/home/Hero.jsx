@@ -1,5 +1,6 @@
 import { Search, ShieldCheck, Home, BadgeCheck, Sparkles } from "lucide-react"
 import Button from "../ui/Button"
+import { siteImages } from "../../data/images"
 
 const trust = [
   { icon: ShieldCheck, label: "NABL certified labs" },
@@ -117,7 +118,7 @@ export default function Hero() {
             {/* Animated gradient ring */}
             <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-r from-brand-blue via-brand-teal to-brand-green opacity-0 blur transition-opacity duration-500 group-hover:opacity-20" />
             <img
-              src="/images/hero-care.png"
+              src={siteImages.heroCare}
               alt="A friendly doctor ready to help patients at CureIncision Health Care"
               className="h-full w-full scale-[1.01] object-cover transition-transform duration-700 hover:scale-105"
             />

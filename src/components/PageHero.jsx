@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
 import { ChevronRight } from "lucide-react"
+import { motion } from "framer-motion"
 
-export default function PageHero({ title, description, breadcrumbs = [] }) {
+export default function PageHero({ title, description, breadcrumbs = [], image, imageAlt }) {
   return (
     <section className="relative overflow-hidden border-b border-line bg-gradient-to-br from-brand-blue-light via-white to-brand-teal-light">
       {/* Animated blobs */}
@@ -17,7 +18,12 @@ export default function PageHero({ title, description, breadcrumbs = [] }) {
         }}
       />
 
-      <div className="container-page relative py-12 lg:py-16 animate-fade-up">
+      <div className={`container-page relative py-12 lg:py-16 ${image ? "grid items-center gap-10 lg:grid-cols-2 lg:py-20" : ""}`}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
         {/* Breadcrumbs */}
         <nav className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-ink-soft" aria-label="Breadcrumb">
           <Link to="/" className="hover:text-brand-blue-dark transition-colors duration-200">
@@ -41,9 +47,28 @@ export default function PageHero({ title, description, breadcrumbs = [] }) {
           {title}
         </h1>
         {description && (
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft animate-fade-up stagger-2">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
             {description}
           </p>
+        )}
+        </motion.div>
+
+        {image && (
+          <motion.div
+            className="relative hidden lg:block"
+            initial={{ opacity: 0, x: 40, scale: 0.96 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="animate-float-slow absolute -left-6 top-8 z-10 rounded-2xl border border-white/80 bg-white/95 px-4 py-3 shadow-xl backdrop-blur">
+              <p className="text-xs font-bold text-ink">Trusted care network</p>
+              <p className="text-[10px] text-ink-soft">Labs · Doctors · Hospitals</p>
+            </div>
+            <div className="relative overflow-hidden rounded-[1.75rem] border-[5px] border-white shadow-[0_20px_50px_rgba(15,76,146,0.2)]">
+              <img src={image} alt={imageAlt ?? title} className="aspect-[5/4] w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 via-transparent to-transparent" />
+            </div>
+          </motion.div>
         )}
       </div>
     </section>

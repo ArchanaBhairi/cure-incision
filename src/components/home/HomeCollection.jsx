@@ -1,5 +1,6 @@
 import { Check, Sparkles } from "lucide-react"
 import Button from "../ui/Button"
+import { siteImages } from "../../data/images"
 
 const points = [
   "Free sample collection at your doorstep",
@@ -75,7 +76,7 @@ export default function HomeCollection() {
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-brand-blue-dark/25 via-transparent to-transparent" />
           <div className="absolute inset-0 z-10 bg-gradient-to-r from-brand-blue-light/20 to-transparent lg:block hidden" />
           <img
-            src="/images/home-collection.png"
+            src={siteImages.homeCollection}
             alt="A certified professional collecting a sample at a patient's home"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
