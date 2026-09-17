@@ -1,21 +1,31 @@
-import { useMemo, useState } from "react"
-import { Star, BedDouble, BadgeCheck, MapPin, Building2, Shield } from "lucide-react"
-import PageHero from "../components/PageHero"
-import Button from "../components/ui/Button"
-import CtaBanner from "../components/home/CtaBanner"
-import ContentImageSection from "../components/ContentImageSection"
-import TrustStrip, { PageIntro } from "../components/TrustStrip"
-import AnimateIn, { StaggerGrid, StaggerItem } from "../components/ui/AnimateIn"
-import { hospitals, hospitalCities } from "../data/hospitals"
-import { siteImages } from "../data/images"
+import { useMemo, useState } from "react";
+import {
+  Star,
+  BedDouble,
+  BadgeCheck,
+  MapPin,
+  Building2,
+  Shield,
+} from "lucide-react";
+import PageHero from "../components/PageHero";
+import Button from "../components/ui/Button";
+import CtaBanner from "../components/home/CtaBanner";
+import ContentImageSection from "../components/ContentImageSection";
+import TrustStrip, { PageIntro } from "../components/TrustStrip";
+import AnimateIn, {
+  StaggerGrid,
+  StaggerItem,
+} from "../components/ui/AnimateIn";
+import { hospitals, hospitalCities } from "../data/hospitals";
+import { siteImages } from "../data/images";
 
 export default function Hospitals() {
-  const [city, setCity] = useState("All")
+  const [city, setCity] = useState("All");
 
   const filtered = useMemo(
     () => hospitals.filter((h) => city === "All" || h.city === city),
     [city],
-  )
+  );
 
   return (
     <>
@@ -29,9 +39,17 @@ export default function Hospitals() {
 
       <TrustStrip
         items={[
-          { icon: Shield, label: "Accredited partners", desc: "NABH / JCI where applicable" },
+          {
+            icon: Shield,
+            label: "Accredited partners",
+            desc: "NABH / JCI where applicable",
+          },
           { icon: BedDouble, label: "5000+ beds", desc: "Across major metros" },
-          { icon: BadgeCheck, label: "Fixed packages", desc: "Transparent surgery pricing" },
+          {
+            icon: BadgeCheck,
+            label: "Fixed packages",
+            desc: "Transparent surgery pricing",
+          },
           { icon: MapPin, label: "Pan-India", desc: "Filter by your city" },
         ]}
       />
@@ -110,7 +128,12 @@ export default function Hospitals() {
                       </span>
                     ))}
                   </div>
-                  <Button to="/contact" variant="outline" size="sm" className="mt-4 w-fit">
+                  <Button
+                    to="/contact"
+                    variant="outline"
+                    size="sm"
+                    className="mt-4 w-fit"
+                  >
                     Enquire now
                   </Button>
                 </div>
@@ -132,5 +155,5 @@ export default function Hospitals() {
 
       <CtaBanner />
     </>
-  )
+  );
 }
