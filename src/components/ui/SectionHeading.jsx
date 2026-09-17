@@ -3,12 +3,17 @@ export default function SectionHeading({ eyebrow, title, description, align = "c
   return (
     <div className={`flex max-w-2xl flex-col gap-3 ${alignment} ${className}`}>
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 rounded-full bg-brand-blue-light px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-blue-dark">
+        <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue-light to-brand-teal-light px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-blue-dark border border-brand-blue/10 shadow-sm">
+          <span className="h-1.5 w-1.5 rounded-full bg-brand-blue animate-pulse" />
           {eyebrow}
         </span>
       )}
-      <h2 className="text-3xl font-bold text-ink sm:text-4xl">{title}</h2>
-      {description && <p className="text-base leading-relaxed text-ink-soft">{description}</p>}
+      <h2 className="text-3xl font-bold text-ink sm:text-4xl">
+        {title}
+      </h2>
+      {description && (
+        <p className="text-base leading-relaxed text-ink-soft">{description}</p>
+      )}
     </div>
   )
 }
