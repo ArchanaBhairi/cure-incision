@@ -1,0 +1,58 @@
+export const blogPosts = [
+  {
+    id: "preparing-for-surgery",
+    title: "How to Prepare for Surgery: A Complete Patient Checklist",
+    category: "Surgery",
+    readTime: "6 min read",
+    date: "Mar 12, 2026",
+    author: "Dr. Imran Khan",
+    excerpt:
+      "From pre-op tests to fasting guidelines, here is everything you need to know before your scheduled procedure.",
+  },
+  {
+    id: "full-body-checkup-why",
+    title: "Why an Annual Full Body Checkup Matters After 30",
+    category: "Preventive Care",
+    readTime: "5 min read",
+    date: "Mar 5, 2026",
+    author: "Dr. Arjun Mehta",
+    excerpt:
+      "Early detection saves lives. Learn which markers to track and how often to screen for a healthier future.",
+  },
+  {
+    id: "managing-diabetes",
+    title: "5 Everyday Habits to Manage Diabetes Better",
+    category: "Diabetes",
+    readTime: "4 min read",
+    date: "Feb 26, 2026",
+    author: "Dr. Ritu Shah",
+    excerpt: "Simple, science-backed lifestyle changes that help keep your blood sugar in a healthy range.",
+  },
+  {
+    id: "heart-healthy-diet",
+    title: "The Heart-Healthy Diet: Foods Your Cardiologist Recommends",
+    category: "Cardiac",
+    readTime: "7 min read",
+    date: "Feb 18, 2026",
+    author: "Dr. Arjun Mehta",
+    excerpt: "Discover the eating patterns that lower cholesterol and reduce your risk of heart disease.",
+  },
+  {
+    id: "womens-health-screenings",
+    title: "Essential Health Screenings Every Woman Should Know",
+    category: "Women's Health",
+    readTime: "6 min read",
+    date: "Feb 10, 2026",
+    author: "Dr. Priya Nair",
+    excerpt: "A decade-by-decade guide to the tests that protect women's health at every stage of life.",
+  },
+  {
+    id: "recovering-after-surgery",
+    title: "Recovering Well: Post-Surgery Care at Home",
+    category: "Surgery",
+    readTime: "5 min read",
+    date: "Feb 2, 2026",
+    author: "Dr. Imran Khan",
+    excerpt: "Wound care, nutrition and mobility tips to help you heal faster and avoid complications.",
+  },
+]
