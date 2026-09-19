@@ -47,13 +47,15 @@ export default function Footer() {
 
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <div className="rounded-2xl bg-white p-3 inline-flex shadow-sm transition-transform duration-300 hover:scale-105">
-            <Logo />
+          <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+            <div className="flex-shrink-0 rounded-2xl bg-white p-3 inline-flex shadow-sm transition-transform duration-300 hover:scale-105">
+              <Logo />
+            </div>
+            <p className="text-sm leading-relaxed text-white/70 sm:pt-1">
+              CureIncision Health Care Pvt. Ltd. is a trusted healthcare marketplace connecting patients with
+              hospitals, diagnostic centers and doctors for a seamless surgery and care pathway.
+            </p>
           </div>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
-            CureIncision Health Care Pvt. Ltd. is a trusted healthcare marketplace connecting patients with
-            hospitals, diagnostic centers and doctors for a seamless surgery and care pathway.
-          </p>
           <div className="mt-5 space-y-2.5 text-sm">
             {[
               { icon: Phone, label: "1800-123-4567", href: "tel:18001234567" },

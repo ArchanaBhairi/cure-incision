@@ -1,4 +1,5 @@
 import { Star, MapPin, Video, Stethoscope } from "lucide-react"
+import { motion } from "framer-motion"
 import Button from "../ui/Button"
 
 function initials(name) {
@@ -12,7 +13,13 @@ function initials(name) {
 
 export default function DoctorCard({ doctor }) {
   return (
-    <div className="flex flex-col rounded-card border border-line bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="flex flex-col rounded-card border border-line bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-lg"
+    >
       <div className="flex items-center gap-4">
         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-blue to-brand-teal text-xl font-bold text-white">
           {initials(doctor.name)}
@@ -53,6 +60,6 @@ export default function DoctorCard({ doctor }) {
           Book Appointment
         </Button>
       </div>
-    </div>
+    </motion.div>
   )
 }

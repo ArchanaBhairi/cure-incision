@@ -51,6 +51,49 @@ export default function PageHero({ title, description, breadcrumbs = [], image, 
             {description}
           </p>
         )}
+
+        {/* Trust/Stat Pills to fill empty space */}
+        <div className="mt-8 flex flex-wrap gap-4">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center gap-2.5 rounded-full border border-brand-blue/15 bg-white/60 px-4 py-2 text-sm shadow-[0_4px_20px_rgba(23,102,192,0.06)] backdrop-blur"
+          >
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-green-light">
+              <svg className="h-3.5 w-3.5 text-brand-green-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+            <span className="font-semibold text-ink">Verified Professionals</span>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center gap-2.5 rounded-full border border-brand-blue/15 bg-white/60 px-4 py-2 text-sm shadow-[0_4px_20px_rgba(23,102,192,0.06)] backdrop-blur"
+          >
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-blue-light">
+              <svg className="h-3.5 w-3.5 text-brand-blue-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+            <span className="font-semibold text-ink">24/7 Support</span>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center gap-2.5 rounded-full border border-brand-blue/15 bg-white/60 px-4 py-2 text-sm shadow-[0_4px_20px_rgba(23,102,192,0.06)] backdrop-blur"
+          >
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-teal-light">
+              <svg className="h-3.5 w-3.5 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </span>
+            <span className="font-semibold text-ink">100% Secure</span>
+          </motion.div>
+        </div>
         </motion.div>
 
         {image && (
@@ -65,7 +108,7 @@ export default function PageHero({ title, description, breadcrumbs = [], image, 
               <p className="text-[10px] text-ink-soft">Labs · Doctors · Hospitals</p>
             </div>
             <div className="relative overflow-hidden rounded-[1.75rem] border-[5px] border-white shadow-[0_20px_50px_rgba(15,76,146,0.2)]">
-              <img src={image} alt={imageAlt ?? title} className="aspect-[5/4] w-full object-cover" />
+              <img src={image} alt={imageAlt ?? title} className="aspect-video w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 via-transparent to-transparent" />
             </div>
           </motion.div>

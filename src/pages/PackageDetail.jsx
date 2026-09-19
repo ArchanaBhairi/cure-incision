@@ -50,7 +50,7 @@ export default function PackageDetail() {
         <div className="lg:col-span-2">
           <AnimateIn>
             <div className="overflow-hidden rounded-card border border-line bg-white shadow-sm">
-              <img src={siteImages.labTests} alt="" className="h-48 w-full object-cover sm:h-56" />
+              <img src={siteImages.labTests} alt="" className="h-72 w-full object-cover sm:h-96" />
               <div className="flex flex-wrap items-center gap-4 p-6">
                 <span className="flex items-center gap-1.5 text-sm font-medium text-ink-soft">
                   <Star className="h-4 w-4 fill-amber-400 text-amber-400" />

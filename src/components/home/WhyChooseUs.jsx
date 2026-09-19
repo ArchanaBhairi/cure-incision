@@ -1,4 +1,5 @@
 import { ShieldCheck, Clock3, Wallet, HeartHandshake, Microscope, Headphones } from "lucide-react"
+import { motion } from "framer-motion"
 import SectionHeading from "../ui/SectionHeading"
 
 const features = [
@@ -20,10 +21,13 @@ export default function WhyChooseUs() {
       />
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {features.map(({ icon: Icon, title, desc, color, iconColor, hoverColor, accent }, i) => (
-          <div
+          <motion.div
             key={title}
-            className="group relative overflow-hidden rounded-card border border-line bg-white p-6 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:border-transparent hover:shadow-2xl card-shine gradient-border animate-fade-up"
-            style={{ animationDelay: `${i * 80}ms` }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="group relative overflow-hidden rounded-card border border-line bg-white p-6 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:border-transparent hover:shadow-2xl card-shine gradient-border"
           >
             {/* Hover gradient overlay */}
             <div className={`absolute inset-0 bg-gradient-to-br ${hoverColor} opacity-0 transition-opacity duration-400 group-hover:opacity-[0.04]`} />
@@ -54,7 +58,7 @@ export default function WhyChooseUs() {
 
             {/* Bottom gradient bar */}
             <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${hoverColor} scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100`} />
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

@@ -15,7 +15,7 @@ export default function Specialties() {
         title="Medical Specialties"
         description="From routine consultations to complex surgeries, access expert care across every major medical discipline."
         breadcrumbs={[{ label: "Specialties" }]}
-        image={siteImages.surgeryCare}
+        image={siteImages.specialties}
         imageAlt="Surgical and specialty medical care"
       />
 

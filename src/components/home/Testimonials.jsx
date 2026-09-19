@@ -1,5 +1,6 @@
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
+import { motion } from "framer-motion"
 import SectionHeading from "../ui/SectionHeading"
 
 const testimonials = [
@@ -45,10 +46,13 @@ export default function Testimonials() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {testimonials.map((t, index) => (
-            <figure
+            <motion.figure
               key={t.name}
-              className="group relative flex flex-col rounded-card border border-line bg-white p-6 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:shadow-2xl hover:border-transparent card-shine gradient-border animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative flex flex-col rounded-card border border-line bg-white p-6 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:shadow-2xl hover:border-transparent card-shine gradient-border"
               onMouseEnter={() => setActive(index)}
               onMouseLeave={() => setActive(null)}
             >
@@ -90,7 +94,7 @@ export default function Testimonials() {
                   <span className="block text-xs text-ink-soft">{t.city}</span>
                 </span>
               </figcaption>
-            </figure>
+            </motion.figure>
           ))}
         </div>
       </div>

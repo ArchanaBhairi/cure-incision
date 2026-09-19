@@ -33,7 +33,7 @@ export default function Packages() {
         title="Health Checkup Packages"
         description="Doctor-designed preventive health packages with free home sample collection and fast digital reports."
         breadcrumbs={[{ label: "Health Packages" }]}
-        image={siteImages.wellness}
+        image={siteImages.packages}
         imageAlt="Healthy lifestyle and preventive care"
       />
 
@@ -68,11 +68,10 @@ export default function Packages() {
                 key={cat}
                 type="button"
                 onClick={() => setCategory(cat)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                  category === cat
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${category === cat
                     ? "bg-brand-blue text-white shadow-md"
                     : "border border-line bg-white text-ink-soft hover:border-brand-blue/30 hover:text-brand-blue-dark"
-                }`}
+                  }`}
               >
                 {cat}
               </button>

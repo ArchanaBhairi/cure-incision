@@ -1,4 +1,5 @@
 import { Search, CalendarCheck, Home, FileText } from "lucide-react"
+import { motion } from "framer-motion"
 import SectionHeading from "../ui/SectionHeading"
 
 const steps = [
@@ -21,10 +22,13 @@ export default function HowItWorks() {
         <div className="absolute top-12 left-0 right-0 hidden h-px bg-gradient-to-r from-transparent via-brand-blue/20 to-transparent lg:block" />
 
         {steps.map(({ icon: Icon, title, desc, color, light, iconColor }, index) => (
-          <div
+          <motion.div
             key={title}
-            className="group relative overflow-hidden rounded-card border border-line bg-white p-6 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:border-transparent hover:shadow-2xl animate-fade-up card-shine gradient-border"
-            style={{ animationDelay: `${index * 100}ms` }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="group relative overflow-hidden rounded-card border border-line bg-white p-6 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:border-transparent hover:shadow-2xl card-shine gradient-border"
           >
             {/* Top gradient bar */}
             <div className={`absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r ${color} transition-transform duration-500 group-hover:scale-x-100 rounded-t-card`} />
@@ -57,7 +61,7 @@ export default function HowItWorks() {
             <div className={`absolute -right-3 top-12 z-10 hidden h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-gradient-to-br ${color} shadow-md lg:flex ${index === steps.length - 1 ? "!hidden" : ""}`}>
               <span className="h-2 w-2 rounded-full bg-white/80" />
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

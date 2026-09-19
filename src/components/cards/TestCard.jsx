@@ -1,10 +1,17 @@
 import { Clock, Home, ListChecks } from "lucide-react"
+import { motion } from "framer-motion"
 import Button from "../ui/Button"
 
 export default function TestCard({ test }) {
   const discount = Math.round(((test.mrp - test.price) / test.mrp) * 100)
   return (
-    <div className="flex flex-col rounded-card border border-line bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="flex flex-col rounded-card border border-line bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-lg"
+    >
       <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-brand-teal-light px-2.5 py-1 text-xs font-semibold text-brand-teal">
         {test.category}
       </span>
@@ -39,6 +46,6 @@ export default function TestCard({ test }) {
           Add
         </Button>
       </div>
-    </div>
+    </motion.div>
   )
 }
